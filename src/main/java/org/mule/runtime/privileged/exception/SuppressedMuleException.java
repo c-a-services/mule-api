@@ -116,4 +116,15 @@ public class SuppressedMuleException extends MuleException {
     return exception;
   }
 
+  @Override
+  public String getVerboseMessage() {
+    // SuppressedException is meant to marks as suppressed another exception that is part of the cause tree.
+    return "Suppressed: " + super.getSummaryMessage();
+  }
+
+  @Override
+  public String getSummaryMessage() {
+    // SuppressedException is meant to marks as suppressed another exception that is part of the cause tree.
+    return "Suppressed: " + super.getSummaryMessage();
+  }
 }
